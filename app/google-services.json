@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "334570569152",
+    "project_id": "moviles-ll-firebase-eha",
+    "storage_bucket": "moviles-ll-firebase-eha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334570569152:android:a8c11e2c0c7ea86ed69c25",
+        "android_client_info": {
+          "package_name": "com.example.momento2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334570569152-cti1jv9jiscp9f28scdo0o3i31olih7k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGfQ_HaNYA9CZiA_HGy7igbyzGnSnL9SY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334570569152-cti1jv9jiscp9f28scdo0o3i31olih7k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
