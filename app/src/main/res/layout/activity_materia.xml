@@ -1,9 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MateriaActivity">
+    android:orientation="vertical"
+    tools:context=".MateriaActivity"
+    android:background="#03A9F4">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:paddingTop="30dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:layout_height="wrap_content"
+            android:text="Courses Module" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etcodeCourse"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="Code Course"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etcourseName"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Course Name" />
+
+        <EditText
+            android:id="@+id/etcourseDuration"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Course Duration (Amount of Semesters)" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center">
+
+
+        <Button
+            android:id="@+id/button"
+            android:backgroundTint="#280568"
+            android:gravity="center"
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Back to Start"
+            android:onClick="BackToMain"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

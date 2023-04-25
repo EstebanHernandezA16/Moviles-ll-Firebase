@@ -6,38 +6,52 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="#A0B6EF">
+    android:background="#03A9F4"
+    >
 <!--#03A9F4 azul claro fuerte, #A0B6EF morado con azul -->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_marginTop="100dp"
+        android:textSize="30dp"
+        android:layout_height="wrap_content"
+        android:text="University App" />
+
     <Button
         android:id="@+id/btnEstudiante"
         android:layout_width="330dp"
+        android:backgroundTint="#280568"
         android:layout_gravity="center"
         android:layout_height="60dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="120dp"
         android:onClick="ModalEstudiantes"
-        android:textSize="30dp"
-        android:text="Estudiante" />
+        android:textSize="25dp"
+        android:text="Students" />
 
     <Button
         android:id="@+id/btnMateria"
         android:layout_width="330dp"
         android:layout_gravity="center"
         android:layout_height="60dp"
+        android:backgroundTint="#280568"
         android:layout_marginTop="10dp"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:onClick="ModalMateria"
-        android:text="Materias" />
+        android:text="Courses" />
 
     <Button
         android:id="@+id/btnMatricula"
         android:layout_width="330dp"
+        android:backgroundTint="#280568"
         android:layout_gravity="center"
         android:layout_height="60dp"
         android:onClick="ModalMatricula"
         android:layout_marginTop="10dp"
-        android:textSize="30dp"
-        android:text="Matriculas" />
-
+        android:textSize="25dp"
+        android:text="Enrollment" />
 
 
 </LinearLayout>

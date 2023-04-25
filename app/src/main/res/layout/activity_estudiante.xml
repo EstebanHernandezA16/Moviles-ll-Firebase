@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".EstudianteActivity"
-    android:background="#A0B6EF">
+    android:background="#03A9F4">
 
     <TextView
         android:id="@+id/textViewEstudiantes"
@@ -88,9 +88,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="AdicionarEstudiante"
+            android:onClick="Add"
             android:layout_marginHorizontal="10dp"
-            android:backgroundTint="#4635EF "
+            android:backgroundTint="#280568"
             android:text="Agregar" />
         <Button
             android:id="@+id/btnConsultar"
@@ -99,7 +99,7 @@
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             android:text="Consultar"
-            android:backgroundTint="#4635EF "/>
+            android:backgroundTint="#280568"/>
 
 
     </LinearLayout>
@@ -115,7 +115,7 @@
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             android:text="Modificar"
-            android:backgroundTint="#4635EF "/>
+            android:backgroundTint="#280568"/>
 
         <Button
             android:id="@+id/btnEliminar"
@@ -124,7 +124,7 @@
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             android:text="Modificar"
-            android:backgroundTint="#4635EF "/>
+            android:backgroundTint="#280568"/>
 
 
 
@@ -140,7 +140,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:text="Anular"
-            android:backgroundTint="#4635EF "/>
+            android:backgroundTint="#280568"/>
 
         <Button
             android:id="@+id/btnLimpiar"
@@ -149,7 +149,7 @@
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             android:text="Anular"
-            android:backgroundTint="#4635EF "
+            android:backgroundTint="#280568"
             />
 
 
@@ -167,7 +167,8 @@
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             android:text="Regresar"
-            android:backgroundTint="#4635EF "
+            android:onClick="Regresar"
+            android:backgroundTint="#280568"
             />
 
 

@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
     }
     public void ModalEstudiantes(View view){
         Intent intEstudiante = new Intent(this,EstudianteActivity.class);
@@ -20,9 +21,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void ModalMatricula(View view){
         Intent intMatricula = new Intent(this, MatriculaActivity.class);
+        //startActivity(intMatricula);
     }
 
     public void ModalMateria(View view){
-        Intent intMateria = new Intent(this, MatriculaActivity.class);
+        Intent intMateria = new Intent(this, MateriaActivity.class);
+        startActivity(intMateria);
     }
 }
