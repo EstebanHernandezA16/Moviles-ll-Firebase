@@ -88,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="Add"
+            android:onClick="AddStudent"
             android:layout_marginHorizontal="10dp"
             android:backgroundTint="#280568"
             android:text="Agregar" />
@@ -99,6 +99,7 @@
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             android:text="Consultar"
+            android:onClick="SearchStudent"
             android:backgroundTint="#280568"/>
 
 
@@ -115,6 +116,7 @@
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             android:text="Modificar"
+            android:onClick="ModifyStudent"
             android:backgroundTint="#280568"/>
 
         <Button
@@ -123,7 +125,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
-            android:text="Modificar"
+            android:text="Eliminar"
+            android:onClick="DeleteStudent"
             android:backgroundTint="#280568"/>
 
 
@@ -140,6 +143,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:text="Anular"
+
             android:backgroundTint="#280568"/>
 
         <Button
@@ -148,7 +152,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
-            android:text="Anular"
+            android:text="Activar"
             android:backgroundTint="#280568"
             />
 
