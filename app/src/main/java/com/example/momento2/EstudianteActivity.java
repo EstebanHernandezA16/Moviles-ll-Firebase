@@ -205,7 +205,7 @@ public class EstudianteActivity extends AppCompatActivity {
             //consultar primero el estado del estudiante
             Estudiante.put("State","Active");
             db.collection("Estudiantes")
-                    .document(idDocument).set(Estudiante)
+                    .document(idDocument).update(Estudiante)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
@@ -240,7 +240,7 @@ public class EstudianteActivity extends AppCompatActivity {
                 //consultar primero el estado del estudiante
                 Estudiante.put("State","Inactive");
                 db.collection("Estudiantes")
-                        .document(idDocument).set(Estudiante)
+                        .document(idDocument).update(Estudiante)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {

@@ -13,9 +13,10 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
         android:textSize="30dp"
         android:paddingTop="20dp"
-        android:hint="Estudiantes"
+        android:hint="Students"
 
         />
 
@@ -27,19 +28,21 @@
         android:ems="10"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp"
         android:inputType="number"
-        android:hint="Carnet" />
+        android:hint="Keycard" />
 
     <EditText
         android:id="@+id/etNombre"
         android:layout_width="350dp"
+        android:layout_marginLeft="5dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:ems="10"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:inputType="textPersonName"
-        android:hint="Nombre" />
+        android:hint="Fullname" />
 
     <EditText
         android:id="@+id/etCarrera"
@@ -47,11 +50,12 @@
 
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
         android:ems="10"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:inputType="textPersonName"
-        android:hint="Carrera" />
+        android:hint="Major" />
 
     <EditText
         android:id="@+id/etSemestre"
@@ -60,9 +64,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Semestre" />
+        android:hint="Semester" />
 
     <CheckBox
         android:id="@+id/cbActivo"
@@ -70,13 +75,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp"
+
         android:layout_marginRight="40dp"
-        android:hint="Activo"
+        android:hint="Active Student?"
+        android:backgroundTint="#CEBAEF"
         android:background="#D4C8E7"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="65dp"
 
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
@@ -91,15 +98,17 @@
             android:onClick="AddStudent"
             android:layout_marginHorizontal="10dp"
             android:backgroundTint="#280568"
-            android:text="Agregar" />
+            android:drawableRight="@drawable/add"
+            android:text="Add new Student" />
         <Button
             android:id="@+id/btnConsultar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
-            android:text="Consultar"
+            android:text="Search Register"
             android:onClick="SearchStudent"
+            android:drawableRight="@drawable/search"
             android:backgroundTint="#280568"/>
 
 
@@ -107,15 +116,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="65dp"
         android:layout_marginVertical="5dp">
+
         <Button
             android:id="@+id/btnModificar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
-            android:text="Modificar"
+            android:text="Alter Student"
+            android:drawableRight="@drawable/modify"
             android:onClick="ModifyStudent"
             android:backgroundTint="#280568"/>
 
@@ -125,7 +136,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
-            android:text="Eliminar"
+            android:text="Delete Student"
+            android:drawableRight="@drawable/delete"
             android:onClick="DeleteStudent"
             android:backgroundTint="#280568"/>
 
@@ -134,7 +146,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="65dp"
         android:layout_marginVertical="10dp">
         <Button
             android:id="@+id/btnAnular"
@@ -142,8 +154,9 @@
             android:layout_height="match_parent"
             android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
-            android:text="Anular"
-
+            android:text="Disable"
+            android:onClick="DisableStudent"
+            android:drawableRight="@drawable/lock"
             android:backgroundTint="#280568"/>
 
         <Button
@@ -152,7 +165,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
-            android:text="Activar"
+            android:text="Enable"
+            android:onClick="EnableStudent"
+            android:drawableRight="@drawable/key"
             android:backgroundTint="#280568"
             />
 
@@ -161,7 +176,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="65dp"
         android:layout_marginVertical="10dp">
 
         <Button
@@ -170,8 +185,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
-            android:text="Regresar"
+            android:text="Back to menu"
             android:onClick="Regresar"
+            android:drawableRight="@drawable/back"
             android:backgroundTint="#280568"
             />
 

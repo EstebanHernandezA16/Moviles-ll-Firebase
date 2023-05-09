@@ -9,7 +9,6 @@
     android:background="#03A9F4">
 
     <LinearLayout
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:paddingTop="30dp"
         android:layout_height="70dp"
@@ -63,23 +62,151 @@
             android:inputType="number"
             android:hint="Course Duration (Amount of Semesters)" />
 
+        <EditText
+            android:id="@+id/etcourseShortening"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="Shortening "
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etcourseClassroom"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="Classroom"
+            android:inputType="number" />
+        <CheckBox
+            android:id="@+id/cbActive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+
+            android:layout_marginRight="40dp"
+            android:hint="Active Course?"
+            android:backgroundTint="#CEBAEF"
+            android:background="#D4C8E7"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_gravity="center">
+        android:layout_height="60dp"
+
+
+        android:layout_marginBottom="3dp"
+        >
 
 
         <Button
-            android:id="@+id/button"
-            android:backgroundTint="#280568"
-            android:gravity="center"
-
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/btnAgregar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Back to Start"
-            android:onClick="BackToMain"/>
+            android:onClick="AddCourse"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="#280568"
+            android:drawableRight="@drawable/add"
+            android:text="Add new Course" />
+
+        <Button
+            android:id="@+id/btnConsultar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:text="Search Course"
+            android:onClick="SearchCourse"
+            android:drawableRight="@drawable/search"
+            android:backgroundTint="#280568"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginVertical="5dp">
+
+        <Button
+            android:id="@+id/btnModificar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:text="Alter Course"
+            android:drawableRight="@drawable/modify"
+            android:onClick="ModifyCourse"
+            android:backgroundTint="#280568"/>
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:text="Delete Course"
+            android:drawableRight="@drawable/delete"
+            android:onClick="DeleteCourse"
+            android:backgroundTint="#280568"/>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginVertical="10dp">
+        <Button
+            android:id="@+id/btnAnular"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:text="Disable"
+            android:onClick="DisableCourse"
+            android:drawableRight="@drawable/lock"
+            android:backgroundTint="#280568"/>
+
+        <Button
+            android:id="@+id/btnLimpiar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:text="Enable"
+            android:onClick="EnableCourse"
+            android:drawableRight="@drawable/key"
+            android:backgroundTint="#280568"
+            />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginBottom="10dp">
+
+
+        <Button
+            android:id="@+id/btnRegresar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:text="Back to menu"
+            android:onClick="BackToMain"
+            android:drawableRight="@drawable/back"
+            android:backgroundTint="#280568"
+            />
+
 
     </LinearLayout>
 
