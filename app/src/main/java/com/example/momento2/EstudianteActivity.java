@@ -37,6 +37,7 @@ public class EstudianteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estudiante);
         getSupportActionBar().hide();
+
         VidCard = findViewById(R.id.etCarnet);
         VfullName = findViewById(R.id.etNombre);
         Vmajor = findViewById(R.id.etCarrera);
@@ -55,23 +56,23 @@ public class EstudianteActivity extends AppCompatActivity {
         active = Vactive.getText().toString();
 
         // Create a new user with a first and last name
-        Map<String, Object> Estudiante = new HashMap<>();
-        Estudiante.put("idCard", idCard);
-        Estudiante.put("FullName", fullName);
-        Estudiante.put("Major", major);
-        Estudiante.put("Semester", semester);
+        Map<String, Object> Student = new HashMap<>();
+        Student.put("idCard", idCard);
+        Student.put("FullName", fullName);
+        Student.put("Major", major);
+        Student.put("Semester", semester);
 
 
         if(Vactive.isChecked() == true){
-            Estudiante.put("State","Active");
+            Student.put("State","Active");
         }else if(Vactive.isChecked() == false){
-            Estudiante.put("State", "Inactive");
+            Student.put("State", "Inactive");
         }else{
             Toast.makeText(this, "Error on checkbox, missing?", Toast.LENGTH_SHORT).show();
         }
         // Add a new document with a generated ID
-        db.collection("Estudiantes")
-                .add(Estudiante)
+        db.collection("Students")
+                .add(Student)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
@@ -95,7 +96,7 @@ public class EstudianteActivity extends AppCompatActivity {
     public void SearchStudent(View view){
         idCard = VidCard.getText().toString();
         if(!idCard.isEmpty() || idCard!=""){
-        db.collection("Estudiantes")
+        db.collection("Students")
                 .whereEqualTo("idCard",idCard)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -119,6 +120,7 @@ public class EstudianteActivity extends AppCompatActivity {
                             }
                         } else {
                            // Log.w(TAG, "Error getting documents.", task.getException());
+                            Toast.makeText(EstudianteActivity.this, "Student doesnt exist", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -140,19 +142,19 @@ public class EstudianteActivity extends AppCompatActivity {
                 Toast.makeText(this, "All the fields are required to Modify", Toast.LENGTH_SHORT).show();
                 VidCard.requestFocus();
             }else{
-                Map<String, Object> Estudiante = new HashMap<>();
-                Estudiante.put("idCard",idCard);
-                Estudiante.put("FullName",fullName);
-                Estudiante.put("Major",major);
-                Estudiante.put("Semester",semester);
+                Map<String, Object> Student = new HashMap<>();
+                Student.put("idCard",idCard);
+                Student.put("FullName",fullName);
+                Student.put("Major",major);
+                Student.put("Semester",semester);
                 if(Vactive.isChecked() == true){
-                    Estudiante.put("State","Active");
+                    Student.put("State","Active");
                 }else{
-                    Estudiante.put("State","Inactive");
+                    Student.put("State","Inactive");
                 }
 
-                db.collection("Estudiantes")
-                        .document(idDocument).set(Estudiante)
+                db.collection("Students")
+                        .document(idDocument).set(Student)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -175,7 +177,7 @@ public class EstudianteActivity extends AppCompatActivity {
 
     public void DeleteStudent(View view){
         if(!idDocument.equals("") || !idDocument.isEmpty()){
-        db.collection("Estudiantes")
+        db.collection("Students")
                 .document(idDocument)
                 .delete()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -192,7 +194,7 @@ public class EstudianteActivity extends AppCompatActivity {
                     }
                 });
         }else{
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please Search for an Student first before delete", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -201,11 +203,11 @@ public class EstudianteActivity extends AppCompatActivity {
     if(!idDocument.isEmpty() || idDocument!=""){
         idCard = VidCard.getText().toString();
         if(!idCard.isEmpty() || idCard!="" ){
-            Map<String, Object> Estudiante = new HashMap<>();
+            Map<String, Object> Student = new HashMap<>();
             //consultar primero el estado del estudiante
-            Estudiante.put("State","Active");
-            db.collection("Estudiantes")
-                    .document(idDocument).update(Estudiante)
+            Student.put("State","Active");
+            db.collection("Students")
+                    .document(idDocument).update(Student)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
@@ -236,11 +238,11 @@ public class EstudianteActivity extends AppCompatActivity {
         if(!idDocument.isEmpty() || idDocument!=""){
             idCard = VidCard.getText().toString();
             if(!idCard.isEmpty() || idCard!="" ){
-                Map<String, Object> Estudiante = new HashMap<>();
+                Map<String, Object> Student = new HashMap<>();
                 //consultar primero el estado del estudiante
-                Estudiante.put("State","Inactive");
-                db.collection("Estudiantes")
-                        .document(idDocument).update(Estudiante)
+                Student.put("State","Inactive");
+                db.collection("Students")
+                        .document(idDocument).update(Student)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
