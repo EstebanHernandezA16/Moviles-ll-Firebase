@@ -281,4 +281,9 @@ public class MateriaActivity extends AppCompatActivity {
         Intent intMain = new Intent(this, MainActivity.class);
         startActivity(intMain);
     }
+
+    public void get_Courses(View view){
+        Intent intGetCourses = new Intent(this, get_courses.class);
+        startActivity(intGetCourses);
+    }
 }

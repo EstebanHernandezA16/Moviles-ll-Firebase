@@ -218,6 +218,20 @@
             android:backgroundTint="#421791"
             />
 
+        <Button
+
+            android:id="@+id/btnGetMaterias"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:text="See all the Courses"
+            android:onClick="get_Courses"
+
+            android:drawableRight="@drawable/search"
+            android:backgroundTint="#421791"
+            />
+
 
     </LinearLayout>
 </LinearLayout>
