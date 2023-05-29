@@ -40,7 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.textViewIdCourse.setText(idCourse);
         holder.textViewName.setText(name);
-        if(state == "Active"){
+        if(state == "Active" || state.equals("Active")){
             holder.checkBoxState.setChecked(true);
         }else{
             holder.checkBoxState.setChecked(false);
@@ -65,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewIdCourse = itemView.findViewById(R.id.textViewCourseName);
+            textViewIdCourse = itemView.findViewById(R.id.textViewIdCourse);
             textViewName = itemView.findViewById(R.id.textViewCourseName);
             checkBoxState = itemView.findViewById(R.id.checkBoxCourseState);
             textViewClassroom = itemView.findViewById(R.id.textViewCourseClassroom);

@@ -7,7 +7,7 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/textViewCourseName"
+        android:id="@+id/textViewIdCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="State" />
+        android:text="Active" />
 
     <TextView
         android:id="@+id/textViewCourseClassroom"
