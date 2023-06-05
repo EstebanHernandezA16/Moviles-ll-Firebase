@@ -28,4 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intMateria = new Intent(this, MateriaActivity.class);
         startActivity(intMateria);
     }
+
+
+    public void logOut(View view){
+        Intent intLogIn = new Intent(this, Login.class);
+        startActivity(intLogIn);
+    }
 }
