@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ModalMatricula(View view){
-        Intent intMatricula = new Intent(this, MatriculaActivity.class);
-        //startActivity(intMatricula);
+       Intent intMatricula = new Intent(this, MatriculaActivity.class);
+       startActivity(intMatricula);
     }
 
     public void ModalMateria(View view){

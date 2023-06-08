@@ -53,7 +53,7 @@ public class MatriculaActivity extends AppCompatActivity {
 
     }
 
-    public void Add() {
+    public void AddEnr(View view) {
         EnrCode = etEnrollmentCode.getText().toString();
         CourseCode = etCourseCode.getText().toString();
         IdCard = etIdCardStudent.getText().toString();
@@ -69,11 +69,11 @@ public class MatriculaActivity extends AppCompatActivity {
             enrollment.put("enrollmentCode", EnrCode);
             enrollment.put("ClassCode", CourseCode);
             enrollment.put("IdCardStudent", IdCard);
-            enrollment.put("StudentFullname", StudentFullname);
-            enrollment.put("ClassName", CourseName);
+            //enrollment.put("StudentFullname", StudentFullname);
+            //enrollment.put("ClassName", CourseName);
             enrollment.put("State", "Active");
 
-            db.collection("Enrrollments")
+            db.collection("Enrollments")
                     .add(enrollment)
                     .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                         @Override
@@ -86,7 +86,8 @@ public class MatriculaActivity extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Log.w(TAG, "Error adding document", e);
+                            // Manejar el error de consulta
+                            Log.e("Firebase", "Error al intentar ingresar el documento: " + e.getMessage());
                         }
                     });
 
@@ -96,7 +97,7 @@ public class MatriculaActivity extends AppCompatActivity {
 
     }
 
-    public void SearchIdsEnr() {
+    public void SearchIdsEnr(View view) {
         IdCard = etIdCardStudent.getText().toString();
         CourseCode = etCourseCode.getText().toString();
         if (IdCard.isEmpty() || CourseCode.isEmpty()) {
@@ -104,9 +105,10 @@ public class MatriculaActivity extends AppCompatActivity {
             etIdCardStudent.requestFocus();
             etCourseCode.requestFocus();
         } else {
+
             db.collection("Students")
                     .whereEqualTo("idCard", IdCard)
-                    //.whereEqualTo("State","Active")
+                    .whereEqualTo("State","Active")
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
@@ -114,21 +116,27 @@ public class MatriculaActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Log.d(TAG, document.getId() + " => " + document.getData());
-                                    StudentId = document.getId();
+
+                                    IdCard = document.getId();
                                     etStudentFullName.setText(document.getString("FullName"));
-                                    Toast.makeText(MatriculaActivity.this, "Student Founded!!", Toast.LENGTH_SHORT).show();
-                                }
+                                    Toast.makeText(MatriculaActivity.this, "Student card Founded", Toast.LENGTH_SHORT).show();                                }
                             } else {
                                 Log.w(TAG, "Error getting documents.", task.getException());
                                 Toast.makeText(MatriculaActivity.this, "Student not founded", Toast.LENGTH_SHORT).show();
                             }
+                        }
+                    }) .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            // Manejar el error de consulta
+                            Log.e("Firebase", "Error al obtener el nombre del estudiante: " + e.getMessage());
                         }
                     });
 
 
             db.collection("Courses")
                     .whereEqualTo("IdCourse", CourseCode)
-                    //.whereEqualTo("State","Active")
+                    .whereEqualTo("State","Active")
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
@@ -138,7 +146,7 @@ public class MatriculaActivity extends AppCompatActivity {
                                     Log.d(TAG, document.getId() + " => " + document.getData());
                                     CourseCode = document.getId();
                                     etCourseName.setText(document.getString("Name"));
-                                    Toast.makeText(MatriculaActivity.this, "Code Founded", Toast.LENGTH_SHORT).show();
+                                   // Toast.makeText(MatriculaActivity.this, "Course Code Founded", Toast.LENGTH_SHORT).show();
                                 }
                             } else {
                                 Log.w(TAG, "Error getting documents.", task.getException());
@@ -149,9 +157,14 @@ public class MatriculaActivity extends AppCompatActivity {
         }
     }
 
-    public void Search_All_Registers (){
-        Intent RegistersView = new Intent(this, EnrrollmentListActivity.class);
-        startActivity(RegistersView);
+    public void Search_All_Registers (View view){
+        try{
+            Intent RegistersView = new Intent(this, EnrrollmentListActivity.class);
+            startActivity(RegistersView);
+        }catch(Exception e){
+            Log.e(TAG, "Error al iniciar el Intent: " + e.getMessage());
+        }
+
     }
 
 

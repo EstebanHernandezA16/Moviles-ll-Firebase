@@ -1,8 +1,5 @@
 package com.example.momento2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-
 import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
@@ -16,6 +13,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.momento2.AdapterEnrollment;
+import com.example.momento2.MainActivity;
+import com.example.momento2.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -23,8 +23,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-
-import android.os.Bundle;
 
 public class EnrrollmentListActivity extends AppCompatActivity {
 
@@ -34,11 +32,12 @@ public class EnrrollmentListActivity extends AppCompatActivity {
 
     ArrayList<ClsEnrollment> arrayListsEnrollments;
 
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enrrollment_list);
+
         // Hide the title bar by default, asociate objects
         // Java with xmlw objects and initialize the ArrayList
 
@@ -54,7 +53,7 @@ public class EnrrollmentListActivity extends AppCompatActivity {
 
 
     private void LoadData(){
-        db.collection("Enrrollments")
+        db.collection("Enrollments")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -64,11 +63,11 @@ public class EnrrollmentListActivity extends AppCompatActivity {
                                 // Log.d(TAG, document.getId() + " => " + document.getData());
                                 ClsEnrollment objenrollments = new ClsEnrollment();
                                 objenrollments.setEnrollmentCode(document.getString("enrollmentCode"));
-                                objenrollments.setCourseCode(document.getString("ClassCode"));
-                                objenrollments.setName(document.getString("ClassName"));
-                                objenrollments.setIdCard(document.getString("IdCardStudent"));
-                                objenrollments.setFullName(document.getString("StudentFullname"));
-                                objenrollments.setState(document.getString("State"));
+                                objenrollments.setClassCode(document.getString("ClassCode"));
+                                objenrollments.setClassname(document.getString("ClassName"));
+                                objenrollments.setStudentCode(document.getString("StudentCode"));
+                                objenrollments.setStudentFullName(document.getString("StudentFullName"));
+                                objenrollments.setEnrollmentCheckBox(document.getString("EnrollmentCheckBox"));
                                 arrayListsEnrollments.add(objenrollments);
                             }
                             AdapterEnrollment addEnrollment = new AdapterEnrollment(arrayListsEnrollments);
@@ -81,11 +80,7 @@ public class EnrrollmentListActivity extends AppCompatActivity {
     }
 
     public void Back(View view){
-        Intent intmain=new Intent(this,MainActivity.class);
+        Intent intmain=new Intent(this, MainActivity.class);
         startActivity(intmain);
     }
-
-
-
-
 }
