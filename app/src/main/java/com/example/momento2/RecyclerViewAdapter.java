@@ -13,7 +13,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewAdapter<E extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private List<DocumentSnapshot> dataList;
 

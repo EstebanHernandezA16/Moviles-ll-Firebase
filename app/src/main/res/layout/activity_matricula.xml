@@ -28,7 +28,7 @@
             android:id="@+id/btnSearchReq"
             android:layout_height="48dp"
             android:layout_width="180dp"
-            android:onClick="SearchIds"
+            android:onClick="SearchIdsEnr"
             android:layout_weight="1"
             android:text="Search"
             android:layout_marginTop="16dp"
@@ -215,7 +215,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="12dp"
             android:backgroundTint="#421791"
-            android:onClick="General_Consult"/>
+            android:onClick="Search_All_Registers"/>
         <Button
             android:id="@+id/btnCancel"
             android:onClick="Clear"
